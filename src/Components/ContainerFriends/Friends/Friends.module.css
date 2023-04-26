@@ -1,0 +1,60 @@
+.userPhoto {
+    width: 100px;
+    height: 70px;
+    border-radius: 50%;
+}
+.friendsCont {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    padding-right: 15px;
+    width: 70%;
+}
+.friends {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+.selectedPage {
+    font-weight: bold;
+    color: red;
+    font-size: 20px;
+    padding-bottom: 5px;
+}
+.arrowRight,
+.arrowLeft {
+    width: 20px;
+    height: 20px;
+}
+.containerNumberPage {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 220px;
+    height: 40px;
+    /* border: 1px solid red; */
+    margin: 10px auto;
+}
+.containerNumberPage span {
+    display: inline-block;
+    line-height: 0rem;
+}
+@media (max-width: 420px) { 
+    .containerNumberPage {
+      width: 40px;
+      height: 15px;
+    }
+    .containerNumberPage img {
+        width: 10px;
+        height: 10px;
+    }
+    .userPhoto {
+        width: 30px;
+        height: 30px;
+    }
+    .wrapperBTN {
+        width: 30px;
+        font-size: 5px;
+    }
+
+  }

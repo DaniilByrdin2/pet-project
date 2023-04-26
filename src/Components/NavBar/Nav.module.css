@@ -1,0 +1,21 @@
+.Nav_Container {
+    background-color: aqua;
+    width: 25%;
+    height: 200px;
+}
+.Nav_div {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+.link {
+    margin: 5px 0px 5px 0px;
+}
+.link a{
+    color: white;
+    text-decoration: none;
+}
+.link a.activeLink {
+    color: red;
+    padding-left: 5px;
+}

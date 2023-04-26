@@ -1,0 +1,15 @@
+.header_main {
+    background-color: peachpuff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.img_header {
+    margin-right: 30%;
+    width: 60px;
+    height: 20px;
+}
+.login_Block a {
+    color: red;
+}

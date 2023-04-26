@@ -1,0 +1,23 @@
+.first {
+    display: flex;
+    flex-direction: column;
+}
+.form {
+    width: 100%;
+    background: linear-gradient(to bottom right, blue, pink);
+}
+.form_title {
+    margin: 10px auto auto auto;
+    width: 250px;
+    height: 100px;
+}
+.checkBox {
+    display: flex;
+}
+
+.rem,
+.pass,
+.login {
+    color: rgb(86, 4, 97);
+    font-weight: bold;
+}
