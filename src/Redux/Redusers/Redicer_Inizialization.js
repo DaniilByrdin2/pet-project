@@ -1,4 +1,6 @@
 import {thunkAuthMe, thunkLoginUser} from '../Redusers/Reducer_Authentification';
+
+
 const INIZIALIZATIONPAGE = 'INIZIALIZATIONPAGE';
 
 let InizializatoeStore = {

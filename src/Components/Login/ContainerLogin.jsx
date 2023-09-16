@@ -1,9 +1,11 @@
 import React from "react";
-import Form from "./Login";
 import { connect } from "react-redux";
-import {thunkLoginUser} from '../../Redux/Redusers/Reducer_Authentification';
-import {withLoginAuthRedirect} from '../HOC/HOCloginRedirect';
 import { compose } from "redux";
+
+import Form from "./Login";
+import {withLoginAuthRedirect} from '../HOC/HOCloginRedirect';
+
+import {thunkLoginUser} from '../../Redux/Redusers/Reducer_Authentification';
 
 class ContainerLogin extends React.Component {
     render() {

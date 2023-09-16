@@ -35,6 +35,16 @@ export const usersAPI = {
     }
 }
 
+export const LoginAPI = {
+    login(email, password, rememberMe) {
+        return instanse.post('/auth/login', { email, password, rememberMe })
+    },
+    logOut() {
+        return instanse.delete('/auth/login')
+    }
+}
+
+
 export const ProfileAPI = {
     getProfileStatus(userID) {
         return instanse.get(`profile/status/${userID}`);
@@ -53,12 +63,4 @@ export const ProfileAPI = {
     }
 }
 
-export const LoginAPI = {
-    login(email, password, rememberMe) {
-        return instanse.post('/auth/login', { email, password, rememberMe })
-    },
-    logOut() {
-        return instanse.delete('/auth/login')
-    }
-}
 

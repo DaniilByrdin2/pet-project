@@ -6,16 +6,20 @@ import styles from './ProfileInfo.module.css';
 let ProfileInfo = (props) => {
     return (
         <div className={styles.wrapper}>
-            { props.UserProfile == null ? <Preloader /> 
-            : <Info 
-                        UserProfile= {props.UserProfile} 
-                        status={props.status}
-                        updateStatus={props.updateStatus}
-                        setPhotoProfile={props.setPhotoProfile}
-            /> }
-            { props.isAuth ? 
+            {props.UserProfile == null ? <Preloader /> :
+
+                <Info
+                    UserProfile={props.UserProfile}
+                    status={props.status}
+                    updateStatus={props.updateStatus}
+                    setPhotoProfile={props.setPhotoProfile}
+                />}
+
+
+            {/* { props.isAuth ? 
                 <button onClick={ props.thunkLogOutUser } className={styles.gradientButton}>Выйти</button> 
-            :   <button className={styles.gradientButton}>Войти</button>}
+            :   <button className={styles.gradientButton}>Войти</button>} */}
+
         </div>)
 }
 

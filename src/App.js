@@ -39,6 +39,8 @@ class App extends React.Component {
     );
   }
 }
+
+
 let mapStateToProps = (state) => {
   return {
     Inizialization: state.InizializationApp.Inizialization,

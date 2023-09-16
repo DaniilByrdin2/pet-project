@@ -6,11 +6,13 @@ const Profile = (props)=> {
     return (
         <div className={c.Profile_main}> 
             <ProfileInfo 
-                            status={props.status}
                             isAuth={props.isAuth}
+
+                            // thunkLogOutUser={props.thunkLogOutUser}
+                            
+                            status={props.status}
                             updateStatus={props.updateStatus}
                             UserProfile ={props.UserProfile}
-                            thunkLogOutUser={props.thunkLogOutUser}
                             setPhotoProfile={props.setPhotoProfile}
             />
             <ContainerMyPosts />
