@@ -15,7 +15,7 @@ const Profile = (props)=> {
                             UserProfile ={props.UserProfile}
                             setPhotoProfile={props.setPhotoProfile}
             />
-            <ContainerMyPosts />
+            <ContainerMyPosts UserProfilePost = { props.UserProfile }/>
         </div>
     );
 }

@@ -1,6 +1,8 @@
 import {usersAPI, LoginAPI} from '../../DAL/API';
 import { stopSubmit } from 'redux-form';
 import { deleteProfile } from '../Redusers/Reduser_ProfileData';
+
+
 const SET_DATA_USER = 'SET_DATA_USER';
 const SET_AUTH_DATA_USER = 'SET_AUTH_DATA_USER';
 const DELETE_AUTH_DATA_USER = 'DELETE_AUTH_DATA_USER';
@@ -27,7 +29,7 @@ const Reducer_Authentification = (state = InizializatoeStore, action) => {
         case SET_AUTH_DATA_USER: {
             return {
                 email: action.dataAuth.login,
-                login: 'зареган',
+                login: 'reg',
                 isAuth: true,
                 password: action.dataAuth.password,
                 id: action.res,
@@ -52,6 +54,7 @@ const Reducer_Authentification = (state = InizializatoeStore, action) => {
     return state;
 }
 export const setAuthUser = (data) => ({type: SET_DATA_USER, userData: {...data} });
+
 export const setAuthUserLogin = (objData, res) => ({type: SET_AUTH_DATA_USER,  dataAuth: objData, res: res });
 export const deleteAuthUser = () => ({type: DELETE_AUTH_DATA_USER});
 export const setUserID = (id) => ({type: SET_USER_ID, id});
@@ -72,7 +75,11 @@ export const thunkLoginUser = (objData) => {
             // let usID = res.data.data.userId;
             if( res.data.resultCode === 0 ) {
                 // dispatch(setUserID(res.data.data.userId));
+                // console.log(objData);
+                // console.log(res);
+
                 dispatch(setAuthUserLogin(objData, res.data.data.userId));
+                dispatch( thunkAuthMe() )
             } else {
                 let message = res.data.resultCode > 0 ? res.data.messages : 'Some error';
                 let action = stopSubmit( 'login', {_error: message});

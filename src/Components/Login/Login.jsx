@@ -1,9 +1,13 @@
 import React from "react"
-import cl from './login.module.css'
 import { Field, reduxForm } from 'redux-form';
-import c from '../ContainerDialogs/Dialogs/Dialogs.module.css';
+
 import {FormProfile, FormProfilePassword} from '../Form/Form';
 import {maxLength, requaredInput} from '../../Utils/ValidateForm/ValidatorLogin';
+
+import styles from './login.module.css'
+// import c from '../ContainerDialogs/Dialogs/Dialogs.module.css';
+
+import { ButtonDashed } from '../UI-Components/Button/Button'
 
 
 const maxSymbol = maxLength(20);
@@ -16,24 +20,28 @@ const Login = (props) => {
     }
     
     return (
-        <div className={cl.form}>
-            <div className={cl.form_title}>
-                <form onSubmit={handleSubmit(submit)}>
-                    <div className={cl.first} >
-                        <span className={cl.login}>login</span>
+        <div className={styles.form}>
+            <div className={styles.form_title}>
+                <form onSubmit={handleSubmit(submit)} className={ styles.form }>
+                    <div className={styles.first} >
+                        <span className={styles.login}>login</span>
                         <Field name="login" component={FormProfile} type="text" validate={[requaredInput, maxSymbol]} />
-                        <span className={cl.pass}>password</span>
+                        <span className={styles.pass}>password</span>
                         <Field name="password" component={FormProfilePassword} type="password" validate={[requaredInput, maxSymbol]} />
-                        <div className={cl.checkBox}>
+                        <div className={styles.checkBox}>
                             <Field name="rememberMe" component="input" type="checkbox" />
-                            <span className={cl.rem}>Remember Me</span>
+                            <span className={styles.rem}>Remember Me</span>
                         </div>
-                        {props.error ? <div>{props.error}</div> : null}
+                        {props.error ? <div className={ styles.errorString }>{props.error}</div> : null}
                     </div>
-                    <div>
-                        <button className={c.gradientButton} type="button" onClick={reset}>Очистить форму</button>
-                        <button className={c.gradientButton} type="submit">Отправить форму</button>
+
+
+                    <div className={ styles.buttonContainer }>
+                        <ButtonDashed  fn = { reset }  text = { 'reset' } />
+                        <button className={styles.buttonSubmit} type="submit">Submit</button>
                     </div>
+
+
                 </form>
             </div>
         </div>

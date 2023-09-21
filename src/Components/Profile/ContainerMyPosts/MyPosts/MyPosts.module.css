@@ -1,23 +1,47 @@
+
+/* main */
 .container {
     display: flex;
-    flex-direction: column;
-}
-.gradientButton {
-    text-decoration: none;
-    display: inline-block;
-    font-size: 10px;
-    color: black;
-    border-radius: 10px;
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-    background-image: linear-gradient(to right, #9EEFE1 0%, #4830F0 51%, #9EEFE1 100%);
-    background-size: 200% auto;
-    box-shadow: 0 0 20px rgba(0, 0, 0, .1);
-    transition: .5s;  
-    padding-top: 12px;
+    flex-direction: row;
+    justify-content: space-around;
+    border-radius: 14px;
+    margin: 2px 2px 2px 2px;
+    background-color: rgb(124, 182, 218);
 }
 
-.gradientButton:hover{
-    background-position: right center;
-    color: white;
+.PostContainer {
+    background-color: rgb(124, 182, 218);
+    border-radius: 14px;
+    margin: 2px 2px 2px 2px;
+}
+
+.posts p {
+    display: inline-block;
+    margin: 5px auto;
+}
+
+/*  */
+
+.activeChangePost {
+    display: flex;
+}
+
+.activeChangePost div {
+    margin-left: -27px;
+}
+
+/* add post form */
+.postModification {
+    display: flex;
+    align-items: center;
+}
+.addPhoto {
+    margin: auto 5px auto 5px;
+}
+
+form {
+    display: flex;
+}
+form button {
+    margin: auto 5px auto 5px;
 }

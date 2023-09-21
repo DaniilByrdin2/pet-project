@@ -1,6 +1,8 @@
 .main {
   display: flex;
   justify-content: space-between;
+  min-height: 70vh;
+  background-color: rgb(37, 126, 185);
 }
 .app-wrapper-content {
   background-color: red;

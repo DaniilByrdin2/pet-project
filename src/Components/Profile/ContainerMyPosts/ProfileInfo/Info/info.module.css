@@ -1,0 +1,57 @@
+.infoProfilePhoto {
+    border-radius: 50%;
+    margin-left: 20%;
+    margin-top: 10px;
+}
+
+.infoProfile {
+    display: flex;
+    flex-direction: row;
+}
+
+.infoProfileData {
+    width: 100%;
+    margin-top: 40px;
+    margin-left: 40px;
+}
+.infoProfileContainer {
+
+    width: 100%;
+    border-radius: 14px;
+    /* border: 1px solid red; */
+    margin: 2px 2px 2px 2px;
+    background-color: rgb(124, 182, 218);;
+}
+
+.activeImg {
+    width: 20px;
+    height: 20px;
+}
+
+
+#changeFoto {
+
+    width: 25px;
+    height: 25px;
+}
+
+
+
+
+/* status */
+
+.activeChangeStatus div {
+    margin: auto 0px auto 5px;
+}
+
+.statusEdit  {
+    margin-left: 5px;
+}
+
+.status {
+    display: flex;
+}
+
+.activeChangeStatus {
+    display: flex;
+}

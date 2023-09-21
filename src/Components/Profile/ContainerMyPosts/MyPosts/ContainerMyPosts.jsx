@@ -1,12 +1,17 @@
-import MyPosts from './MyPosts';
-import { onPostChange, onAddPost} 
-from '../../../../Redux/Redusers/Reduser_ProfileData';
 import { connect } from 'react-redux';
 
+import { onPostChange, onAddPost} from '../../../../Redux/Redusers/Reduser_ProfileData';
+
+import MyPosts from './MyPosts';
+
+
+
 let mapStateToProps = (state) => {
+
     return {
         posts: state.ProfileData.Posts,
         newPostText: state.ProfileData.newPostText,
+        // state: state
     }
 };
 

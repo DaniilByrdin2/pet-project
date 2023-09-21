@@ -56,7 +56,17 @@ $colorHeadFont: rgb(236, 120, 120);
     justify-content: space-evenly;
     width: 100%;
 }
+
+.login_Block {
+    display: flex;
+    align-items: center;
+}
 .login_Block a {
     color: $colorHeadFont;
+    margin-right: 10px;
 }
 
+
+.btnDashedHeader {
+    margin: auto 10px auto 0px;
+}

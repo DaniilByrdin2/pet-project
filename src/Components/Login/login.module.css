@@ -4,7 +4,6 @@
 }
 .form {
     width: 100%;
-    background: linear-gradient(to bottom right, blue, pink);
 }
 .form_title {
     margin: 10px auto auto auto;
@@ -18,6 +17,33 @@
 .rem,
 .pass,
 .login {
-    color: rgb(86, 4, 97);
     font-weight: bold;
+}
+
+.login, .pass { margin: 0px auto 8px auto; }
+
+.errorString { color: red; font-size: 12px; display: inline-block; }
+
+
+
+
+/* button */
+
+.buttonContainer {
+    display: flex;
+}
+
+.buttonSubmit {
+    background-color: rgb(43, 86, 204);
+    border-radius: 8px;
+    padding: 8px;
+}
+.buttonSubmit:hover {
+    background-color: rgb(68, 115, 246);
+    color: white;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
 }

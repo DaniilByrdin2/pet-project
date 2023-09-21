@@ -9,9 +9,9 @@ const SET_USER_PHOTO = 'SET_USER_PHOTO';
 
 let InizializatoeStore = {
     Posts: [
-        { id: 1, textPost: 'hi, my first post', likesCount: 12, },
-        { id: 2, textPost: 'how are you?', likesCount: 52, },
-        { id: 2, textPost: 'how are you?', likesCount: 52, }
+        { id: 1, textPost: 'hi, my first post', likesCount: 12, date: "00:51:15 Sep 21 2023", photoPost: null },
+        { id: 2, textPost: 'how are you?', likesCount: 52, date: "00:55:15 Sep 21 2023", photoPost: null },
+        { id: 2, textPost: 'how are you?', likesCount: 52, date: "02:55:15 Sep 21 2023", photoPost: null }
     ],
     Profile_Users: null,
     status: '',
@@ -45,8 +45,6 @@ const Reduser_ProfilePage = ( state = InizializatoeStore, action ) => {
                 status: action.status
             }
         }
-
-        
         case USER_PROFILE: {
             return {
                 ...state, 
@@ -76,7 +74,17 @@ export const ProfileUsers = (pr) => ({ type: USER_PROFILE, pr })
 export const deleteProfile = () => ({type: DELETE_Profile_Users}) 
 
 
-export const onAddPost = (newPostUser)=> ({type: ADD_POST, newPost: {id: Date.now(), ...newPostUser, likesCount: 0} });
+export const onAddPost = (newPostUser, photo) => { 
+    console.log(photo);
+
+    const hour = new Date().toTimeString().split(' ')[0]
+    const month = new Date().toDateString().split(' ');
+    const datePost = [ hour, month[1], month[2], month[3] ].join(' ')
+
+    return {type: ADD_POST, newPost: { id: Date.now(), ...newPostUser, likesCount: 0, date: datePost, photoPost: photo } };
+}
+
+
 export const onPostChange = (text)=> ({type: UPDATE_NEW_POST, NewText: text,});
 
 export const setUserStatus = (status)=> ({type: SET_USER_STATUS, status: status});

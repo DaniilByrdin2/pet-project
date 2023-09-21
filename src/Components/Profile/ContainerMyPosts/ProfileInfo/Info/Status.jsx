@@ -1,5 +1,8 @@
 import React from "react";
 
+import { EditOutlined, CloseCircleOutlined } from '@ant-design/icons';
+
+import styles from './info.module.css';
 
 class Status extends React.Component {
     state = {
@@ -34,8 +37,21 @@ class Status extends React.Component {
         return (
             <div>
                 {this.state.editMode 
-                    ? <input onChange={ this.updateStatus} autoFocus={true} onBlur={ this.deActivateEditMode.bind(this) } type="text" value={this.state.status} />
-                    : <span onDoubleClick={ this.activateEditMode.bind(this) }>{this.state.status || 'установите статус'}</span> 
+                    ? 
+                    
+                    <div className={ styles.activeChangeStatus }>
+                        <input onChange={ this.updateStatus} autoFocus={true} onBlur={ this.deActivateEditMode.bind(this) } type="text" value={this.state.status} />
+                        <div><CloseCircleOutlined /></div>
+                    </div>
+                    
+                    :
+                    <div className={ styles.status }>
+                        <div>{this.state.status || 'установите статус'}</div>
+                        <div onClick={ this.activateEditMode.bind(this) }>
+                            <div className={ styles.statusEdit }><EditOutlined /></div>
+                        </div>
+                    </div> 
+                    // <span onDoubleClick={ this.activateEditMode.bind(this) }>{this.state.status || 'установите статус'}<EditOutlined /></span> 
                 }
             </div>
         )

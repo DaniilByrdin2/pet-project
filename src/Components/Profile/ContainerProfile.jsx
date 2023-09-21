@@ -48,7 +48,7 @@ class ContainerProfileAPI extends React.Component {
                     
                     isAuth={this.props.isAuth}
                     thunkLogOutUser={this.props.thunkLogOutUser}
-                    />
+                />
             </>
         );
     }
@@ -57,8 +57,6 @@ class ContainerProfileAPI extends React.Component {
 let mapDispatchToProps = (state) => { 
     return {
         isAuth: state.Authentification.isAuth,
-
-
         Profile_Users: state.ProfileData.Profile_Users,
         status: state.ProfileData.status,
         userIDProfile: state.Authentification.id,
@@ -73,7 +71,6 @@ export default compose(
             updateUserStatusThunk,
             setPhotoProfile,
             setUserProfilePageThunk,
-
             // thunkLogOutUser,
         }),
     withRouter,    
